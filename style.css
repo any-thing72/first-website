@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap');
 
 :root {
-  --bg: #fffdf7;
-  --text: #332e2b;
-  --accent: #f08a5d;
-  --surface: #fffaf0;
-  --line: rgba(51, 46, 43, 0.12);
+  --accent: #ffd700;
+  --accent-deep: #e5ba00;
+  --text: #1f2937;
+  --text-muted: #4b5563;
+  --white: #ffffff;
+  --light: #f5f6f8;
+  --line: #e5e7eb;
+  --shadow: 0 16px 32px rgba(31, 41, 55, 0.09);
 }
 
 * {
@@ -15,10 +18,10 @@
 }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
-  background-color: var(--bg);
+  font-family: 'Noto Sans KR', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--text);
-  line-height: 1.7;
+  background: linear-gradient(180deg, var(--white), var(--light));
+  line-height: 1.65;
 }
 
 a {
@@ -39,14 +42,14 @@ img {
 .gnb {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(255, 253, 247, 0.95);
-  backdrop-filter: blur(8px);
+  z-index: 1000;
   border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
 }
 
 .gnb-inner {
-  min-height: 68px;
+  min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,118 +57,234 @@ img {
 }
 
 .brand {
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  font-weight: 800;
+  font-size: 1.12rem;
+  letter-spacing: 0.04em;
 }
 
 .menu {
   display: flex;
   list-style: none;
-  gap: 1.2rem;
+  gap: 0.5rem;
 }
 
 .menu a {
-  padding: 0.3rem 0.4rem;
-  border-radius: 8px;
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  color: var(--text-muted);
   font-weight: 500;
-  transition: color 0.25s ease, background-color 0.25s ease;
+  transition: all 0.2s ease;
 }
 
-.menu a:hover {
-  color: var(--accent);
-}
-
+.menu a:hover,
 .menu a.active {
-  color: var(--accent);
-  background: rgba(240, 138, 93, 0.12);
+  background: rgba(255, 215, 0, 0.22);
+  color: #111827;
 }
 
 main {
-  padding: 3.5rem 0 4.5rem;
+  padding: 2.8rem 0 4rem;
 }
 
 .hero {
+  display: grid;
+  gap: 1.8rem;
+}
+
+.hero-copy {
   text-align: center;
   display: grid;
-  gap: 2rem;
+  gap: 0.8rem;
+}
+
+.hero-copy p {
+  color: var(--text-muted);
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.8rem, 5vw, 3.25rem);
+  line-height: 1.24;
   letter-spacing: -0.02em;
 }
 
-.hero .photo {
+.accent {
+  color: #b89200;
+}
+
+.hero-media {
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 16px 32px rgba(51, 46, 43, 0.16);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
 }
 
-.page-title {
-  margin-bottom: 1.3rem;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+.page-head {
+  margin-bottom: 1.5rem;
 }
 
-.lead {
-  max-width: 760px;
-  font-size: 1.05rem;
-  color: rgba(51, 46, 43, 0.92);
-}
-
-.lead + .lead {
-  margin-top: 1rem;
-}
-
-.music-grid {
-  margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.song-card {
-  background: var(--surface);
-  border: 1px solid rgba(240, 138, 93, 0.28);
-  border-radius: 18px;
-  padding: 1.3rem;
-  box-shadow: 0 8px 16px rgba(51, 46, 43, 0.08);
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
-}
-
-.song-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 26px rgba(51, 46, 43, 0.14);
-}
-
-.song-card h3 {
-  color: var(--accent);
+.page-head h1 {
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
   margin-bottom: 0.5rem;
 }
 
+.page-head p {
+  color: var(--text-muted);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.1rem;
+  box-shadow: 0 6px 16px rgba(31, 41, 55, 0.05);
+}
+
+.card h3 {
+  font-size: 1rem;
+  color: #b89200;
+  margin-bottom: 0.45rem;
+}
+
+.awards-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.awards-table th,
+.awards-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.awards-table th {
+  background: rgba(255, 215, 0, 0.22);
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.album-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 18px rgba(31, 41, 55, 0.06);
+}
+
+.album-card img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.album-meta {
+  padding: 0.9rem;
+}
+
+.album-meta p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.song-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.song-list li {
+  list-style: none;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #f5d54b;
+  background: #fff9dc;
+  font-size: 0.92rem;
+}
+
+.media-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1rem;
+}
+
+.video-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.activity {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  padding: 1rem;
+}
+
+.activity h3 {
+  margin-bottom: 0.75rem;
+}
+
+.activity li + li {
+  margin-top: 0.6rem;
+}
+
 @media (max-width: 900px) {
-  .music-grid {
+  .album-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .media-layout {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 640px) {
   .gnb-inner {
+    min-height: auto;
     flex-direction: column;
     justify-content: center;
-    padding: 0.7rem 0;
+    padding: 0.8rem 0;
   }
 
   .menu {
-    gap: 0.6rem;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   main {
-    padding-top: 2.2rem;
+    padding-top: 2rem;
   }
 
-  .music-grid {
+  .card-grid,
+  .album-grid {
     grid-template-columns: 1fr;
+  }
+
+  .awards-table {
+    font-size: 0.92rem;
   }
 }
