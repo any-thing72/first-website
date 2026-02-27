@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10cm Fan Landing Page</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+      :root {
+        --bg: #fffdf7;
+        --text: #332e2b;
+        --accent: #f08a5d;
+        --card-bg: #fffaf0;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      .container {
+        width: min(1100px, 92%);
+        margin: 0 auto;
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 5vw, 3.6rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .hero h1 .accent {
+        color: var(--accent);
+      }
+
+      .hero img {
+        width: min(800px, 100%);
+        border-radius: 24px;
+        box-shadow: 0 14px 30px rgba(51, 46, 43, 0.14);
+        display: block;
+      }
+
+      .about {
+        text-align: center;
+      }
+
+      .about h2,
+      .discography h2 {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        margin-bottom: 1rem;
+      }
+
+      .about p {
+        max-width: 760px;
+        margin: 0 auto;
+        font-size: 1.05rem;
+      }
+
+      .discography {
+        text-align: center;
+      }
+
+      .cards {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.1rem;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border: 1px solid rgba(240, 138, 93, 0.25);
+        border-radius: 18px;
+        padding: 1.4rem 1.2rem;
+        text-align: left;
+        box-shadow: 0 6px 14px rgba(51, 46, 43, 0.07);
+        transition: transform 0.28s ease, box-shadow 0.28s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 28px rgba(51, 46, 43, 0.14);
+      }
+
+      .card h3 {
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+        font-size: 1.15rem;
+      }
+
+      footer {
+        padding: 2rem 1rem 2.6rem;
+        text-align: center;
+        font-size: 0.85rem;
+        color: rgba(51, 46, 43, 0.72);
+      }
+
+      @media (max-width: 900px) {
+        .cards {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        section {
+          padding: 3.2rem 0;
+        }
+
+        .cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container hero-content">
+        <h1>봄을 부르는 독보적 음색, <span class="accent">10cm</span></h1>
+        <img
+          src="https://via.placeholder.com/800x500/F08A5D/FFFFFF?text=10cm+Main+Photo"
+          alt="10cm"
+        />
+      </div>
+    </header>
+
+    <main>
+      <section class="about">
+        <div class="container">
+          <h2>About 10cm</h2>
+          <p>
+            10cm는 권정열 1인 체제로 이어지고 있는 인디 팝 프로젝트로, 어쿠스틱 기타를
+            기반으로 한 섬세한 사운드와 솔직한 감정선이 매력입니다. 달콤하면서도 살짝 찌질한
+            현실 공감 가사로, 우리의 연애와 일상을 가장 따뜻하게 노래하는 아티스트로 사랑받고
+            있습니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="discography">
+        <div class="container">
+          <h2>대표곡 Discography</h2>
+          <div class="cards">
+            <article class="card">
+              <h3>아메리카노</h3>
+              <p>재치 있는 가사와 중독성 있는 멜로디로 10cm의 존재감을 대중에게 각인시킨 곡.</p>
+            </article>
+            <article class="card">
+              <h3>스토커</h3>
+              <p>한쪽 마음의 서툰 감정을 섬세하게 풀어내며, 쓸쓸한 위트를 담아낸 대표 발라드.</p>
+            </article>
+            <article class="card">
+              <h3>폰서트</h3>
+              <p>일상 속 설렘의 순간을 담백하게 노래해, 듣는 이의 마음을 간질이는 로맨틱 트랙.</p>
+            </article>
+            <article class="card">
+              <h3>그라데이션</h3>
+              <p>점점 짙어지는 감정을 색채처럼 표현하며 따뜻한 위로를 건네는 감성 넘버.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2026 10cm Fan Page - Created by Your Name</footer>
+  </body>
+</html>
