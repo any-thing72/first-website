@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10cm | Music</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="gnb">
+      <div class="container gnb-inner">
+        <a class="brand" href="index.html">10CM</a>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="active" href="music.html">Music</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <section class="container">
+        <h1 class="page-title">대표곡</h1>
+        <div class="music-grid">
+          <article class="song-card">
+            <h3>아메리카노</h3>
+            <p>위트 있는 가사와 경쾌한 리듬으로 10cm의 이름을 대중에게 알린 시그니처 곡.</p>
+          </article>
+          <article class="song-card">
+            <h3>스토커</h3>
+            <p>짝사랑의 불안하고도 솔직한 감정을 섬세하게 풀어낸 10cm의 대표 발라드.</p>
+          </article>
+          <article class="song-card">
+            <h3>폰서트</h3>
+            <p>일상 속 설렘을 따뜻하게 노래해 많은 리스너의 공감을 얻은 감성 트랙.</p>
+          </article>
+          <article class="song-card">
+            <h3>그라데이션</h3>
+            <p>점점 깊어지는 감정을 그라데이션처럼 표현한 서정적인 멜로디의 인기곡.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
